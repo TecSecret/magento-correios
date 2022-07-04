@@ -5,26 +5,26 @@
  *
  * Correios Shipping Method for Magento 2.
  *
- * @package ImaginationMedia\Correios
- * @author Igor Ludgero Miura <igor@imaginationmedia.com>
- * @copyright Copyright (c) 2017 Imagination Media (https://www.imaginationmedia.com/)
+ * @package NLTecnologia\Correios
+ * @author Igor Ludgero Miura <igor@NLTecnologia.com>
+ * @copyright Copyright (c) 2017 Imagination Media (https://www.NLTecnologia.com/)
  * @license https://opensource.org/licenses/OSL-3.0.php Open Software License 3.0
  */
 
-namespace ImaginationMedia\Correios\Controller\Adminhtml\Cotacoes;
+namespace NLTecnologia\Correios\Controller\Adminhtml\Cotacoes;
 
 use Magento\Backend\App\Action;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\Exception\LocalizedException;
-use ImaginationMedia\Correios\Controller\Adminhtml\Cotacoes\PostDataProcessor;
-use ImaginationMedia\Correios\Helper\Data;
-use ImaginationMedia\Correios\Model\CotacoesFactory;
+use NLTecnologia\Correios\Controller\Adminhtml\Cotacoes\PostDataProcessor;
+use NLTecnologia\Correios\Helper\Data;
+use NLTecnologia\Correios\Model\CotacoesFactory;
 
 class Save extends Action
 {
-    const ADMIN_RESOURCE = 'ImaginationMedia_Correios::correios_menuoption1';
+    const ADMIN_RESOURCE = 'NLTecnologia_Correios::correios_menuoption1';
     /**
-     * @var \ImaginationMedia\Correios\Controller\Adminhtml\Cotacoes\PostDataProcessor
+     * @var \NLTecnologia\Correios\Controller\Adminhtml\Cotacoes\PostDataProcessor
      */
     protected $dataProcessor;
     /**

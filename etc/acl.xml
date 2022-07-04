@@ -5,9 +5,9 @@
  *
  * Correios Shipping Method for Magento 2.
  *
- * @package ImaginationMedia\Correios
- * @author Igor Ludgero Miura <igor@imaginationmedia.com>
- * @copyright Copyright (c) 2017 Imagination Media (https://www.imaginationmedia.com/)
+ * @package NLTecnologia\Correios
+ * @author Igor Ludgero Miura <igor@NLTecnologia.com>
+ * @copyright Copyright (c) 2017 Imagination Media (https://www.NLTecnologia.com/)
  * @license https://opensource.org/licenses/OSL-3.0.php Open Software License 3.0
  */
 -->
@@ -16,14 +16,14 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="ImaginationMedia_Correios::imaginationmedia_general" title="Imagination Media"
+                <resource id="NLTecnologia_Correios::NLTecnologia_general" title="Imagination Media"
                           sortOrder="0">
-                    <resource id="ImaginationMedia_Correios::correios_menutop" title="Correios" sortOrder="0">
-                        <resource id="ImaginationMedia_Correios::correios_menuoption1" title="Shipping Track"
+                    <resource id="NLTecnologia_Correios::correios_menutop" title="Correios" sortOrder="0">
+                        <resource id="NLTecnologia_Correios::correios_menuoption1" title="Shipping Track"
                                   sortOrder="1"/>
-                        <resource id="ImaginationMedia_Correios::correios_menuoption2" title="Shipping Method Configuration"
+                        <resource id="NLTecnologia_Correios::correios_menuoption2" title="Shipping Method Configuration"
                                   sortOrder="2"/>
-                        <resource id="ImaginationMedia_Correios::correios_menuoption3" title="Post Methods Configuration"
+                        <resource id="NLTecnologia_Correios::correios_menuoption3" title="Post Methods Configuration"
                                   sortOrder="3"/>
                     </resource>
                 </resource>

@@ -5,10 +5,10 @@
  *
  * Correios Shipping Method for Magento 2.
  *
- * @package ImaginationMedia\Correios
- * @author Igor Ludgero Miura <igor@imaginationmedia.com>
+ * @package NLTecnologia\Correios
+ * @author Igor Ludgero Miura <igor@NLTecnologia.com>
  * @author Douglas Ianitsky <ianitsky@gmail.com>
- * @copyright Copyright (c) 2017 Imagination Media (https://www.imaginationmedia.com/)
+ * @copyright Copyright (c) 2017 Imagination Media (https://www.NLTecnologia.com/)
  * @license https://opensource.org/licenses/OSL-3.0.php Open Software License 3.0
  */
 -->
@@ -18,13 +18,13 @@
             <class>correios-postingmethods</class>
             <label>Shipping Codes (Correios)</label>
             <tab>sales</tab>
-            <resource>ImaginationMedia_Correios::correios_menuoption3</resource>
+            <resource>NLTecnologia_Correios::correios_menuoption3</resource>
             <group id="settings" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
                 <label>Post Method Codes</label>
                 <comment>Set the post methods codes according your contract with Correios.</comment>
                 <field id="methods" translate="label comment tooltip" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Methods</label>
-                    <frontend_model>ImaginationMedia\Correios\Block\Adminhtml\System\Config\Form\Field\PostMethods</frontend_model>
+                    <frontend_model>NLTecnologia\Correios\Block\Adminhtml\System\Config\Form\Field\PostMethods</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                     <comment><![CDATA[]]></comment>
                     <tooltip><![CDATA[]]></tooltip>
@@ -32,8 +32,8 @@
             </group>
         </section>
         <section id="carriers" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
-            <resource>ImaginationMedia_Correios::correios_menuoption2</resource>
-            <group id="imaginationmedia_correios" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+            <resource>NLTecnologia_Correios::correios_menuoption2</resource>
+            <group id="NLTecnologia_correios" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Correios</label>
                 <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Enabled</label>
@@ -44,11 +44,11 @@
                 </field>
                 <field id="posting_methods" translate="label" type="multiselect" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Posting Methods</label>
-                    <source_model>ImaginationMedia\Correios\Model\Config\Source\PostingMethods</source_model>
+                    <source_model>NLTecnologia\Correios\Model\Config\Source\PostingMethods</source_model>
                 </field>
                 <field id="posting_freemethod" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Free Method</label>
-                    <source_model>ImaginationMedia\Correios\Model\Config\Source\PostingMethods</source_model>
+                    <source_model>NLTecnologia\Correios\Model\Config\Source\PostingMethods</source_model>
                 </field>
                 <field id="login" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Administrative code</label>
@@ -59,7 +59,7 @@
                 </field>
                 <field id="weight_type" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Weight Type</label>
-                    <source_model>ImaginationMedia\Correios\Model\Config\Source\WeightType</source_model>
+                    <source_model>NLTecnologia\Correios\Model\Config\Source\WeightType</source_model>
                 </field>
                 <field id="owner_hands" translate="label" type="select" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Use Owner Hands</label>
@@ -126,7 +126,7 @@
                 </field>
                 <field id="function_mode" translate="label" type="select" sortOrder="24" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Function Mode</label>
-                    <source_model>ImaginationMedia\Correios\Model\Config\Source\FunctionMode</source_model>
+                    <source_model>NLTecnologia\Correios\Model\Config\Source\FunctionMode</source_model>
                 </field>
                 <field id="sort_order" translate="label" type="text" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Sort Order</label>

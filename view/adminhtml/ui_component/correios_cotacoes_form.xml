@@ -5,9 +5,9 @@
  *
  * Correios Shipping Method for Magento 2.
  *
- * @package ImaginationMedia\Correios
- * @author Igor Ludgero Miura <igor@imaginationmedia.com>
- * @copyright Copyright (c) 2017 Imagination Media (https://www.imaginationmedia.com/)
+ * @package NLTecnologia\Correios
+ * @author Igor Ludgero Miura <igor@NLTecnologia.com>
+ * @copyright Copyright (c) 2017 Imagination Media (https://www.NLTecnologia.com/)
  * @license https://opensource.org/licenses/OSL-3.0.php Open Software License 3.0
  */
 -->
@@ -24,13 +24,13 @@
         </item>
         <item name="template" xsi:type="string">templates/form/collapsible</item>
         <item name="buttons" xsi:type="array">
-            <item name="back" xsi:type="string">ImaginationMedia\Correios\Block\Adminhtml\Cotacoes\Edit\BackButton</item>
-            <item name="save" xsi:type="string">ImaginationMedia\Correios\Block\Adminhtml\Cotacoes\Edit\SaveButton</item>
+            <item name="back" xsi:type="string">NLTecnologia\Correios\Block\Adminhtml\Cotacoes\Edit\BackButton</item>
+            <item name="save" xsi:type="string">NLTecnologia\Correios\Block\Adminhtml\Cotacoes\Edit\SaveButton</item>
         </item>
     </argument>
     <dataSource name="correios_cotacoes_form_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">ImaginationMedia\Correios\Model\ResourceModel\Cotacoes\DataProvider</argument>
+            <argument name="class" xsi:type="string">NLTecnologia\Correios\Model\ResourceModel\Cotacoes\DataProvider</argument>
             <argument name="name" xsi:type="string">correios_cotacoes_form_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">id</argument>
             <argument name="requestFieldName" xsi:type="string">id</argument>
@@ -65,7 +65,7 @@
         </field>
         <field name="servico">
             <argument name="data" xsi:type="array">
-                <item name="options" xsi:type="object">ImaginationMedia\Correios\Model\Config\Source\PostingMethods</item>
+                <item name="options" xsi:type="object">NLTecnologia\Correios\Model\Config\Source\PostingMethods</item>
                 <item name="config" xsi:type="array">
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">Service</item>

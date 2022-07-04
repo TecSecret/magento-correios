@@ -5,17 +5,17 @@
  *
  * Correios Shipping Method for Magento 2.
  *
- * @package ImaginationMedia\Correios
- * @author Igor Ludgero Miura <igor@imaginationmedia.com>
- * @copyright Copyright (c) 2017 Imagination Media (https://www.imaginationmedia.com/)
+ * @package NLTecnologia\Correios
+ * @author Igor Ludgero Miura <igor@NLTecnologia.com>
+ * @copyright Copyright (c) 2017 Imagination Media (https://www.NLTecnologia.com/)
  * @license https://opensource.org/licenses/OSL-3.0.php Open Software License 3.0
  */
 
-namespace ImaginationMedia\Correios\Model\ResourceModel\Cotacoes;
+namespace NLTecnologia\Correios\Model\ResourceModel\Cotacoes;
 
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Ui\DataProvider\AbstractDataProvider;
-use ImaginationMedia\Correios\Model\CotacoesFactory;
+use NLTecnologia\Correios\Model\CotacoesFactory;
 
 class DataProvider extends AbstractDataProvider
 {

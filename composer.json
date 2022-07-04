@@ -1,8 +1,8 @@
 {
-  "name": "imaginationmedia/correios",
-  "description": "Correios shipping method integration for Magento 2.x",
+  "name": "nltecnologia/correios",
+  "description": "Módulo para a transportadora Empresa Correios Magento 2.x",
   "type": "magento2-module",
-  "version": "1.2.6",
+  "version": "1.0",
   "license": [
     "OSL-3.0",
     "AFL-3.0"
@@ -11,16 +11,16 @@
   },
   "authors": [
     {
-      "name": "Igor Ludgero Miura",
-      "email": "igor@imaginationmedia.com",
-      "homepage": "http://www.imaginationmedia.com.br/",
+      "name": "Dep. de Desenvolvimento - NL Tecnologia LTDA",
+      "email": "webmaster@nltecnologia.com.br",
+      "homepage": "https://nltecnologia.com.br/",
       "role": "Developer"
     }
   ],
   "autoload": {
     "files": [ "registration.php" ],
     "psr-4": {
-      "ImaginationMedia\\Correios\\": ""
+      "NLTecnologia\\Correios\\": ""
     }
   }
 }

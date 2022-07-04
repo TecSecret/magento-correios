@@ -5,16 +5,16 @@
  *
  * Correios Shipping Method for Magento 2.
  *
- * @package ImaginationMedia\Correios
- * @author Igor Ludgero Miura <igor@imaginationmedia.com>
+ * @package NLTecnologia\Correios
+ * @author Igor Ludgero Miura <igor@NLTecnologia.com>
  * @author Douglas Ianitsky <ianitsky@gmail.com>
- * @copyright Copyright (c) 2017-2019 Imagination Media (https://www.imaginationmedia.com/)
+ * @copyright Copyright (c) 2017-2019 Imagination Media (https://www.NLTecnologia.com/)
  * @license https://opensource.org/licenses/OSL-3.0.php Open Software License 3.0
  */
 
-namespace ImaginationMedia\Correios\Model\Config\Source;
+namespace NLTecnologia\Correios\Model\Config\Source;
 
-use ImaginationMedia\Correios\Helper\Data as Helper;
+use NLTecnologia\Correios\Helper\Data as Helper;
 use Magento\Framework\Option\ArrayInterface;
 
 class PostingMethods implements ArrayInterface

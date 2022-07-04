@@ -5,17 +5,17 @@
  *
  * Correios Shipping Method for Magento 2.
  *
- * @package ImaginationMedia\Correios
- * @author Igor Ludgero Miura <igor@imaginationmedia.com>
+ * @package NLTecnologia\Correios
+ * @author Igor Ludgero Miura <igor@NLTecnologia.com>
  * @author Douglas Ianitsky <ianitsky@gmail.com>
- * @copyright Copyright (c) 2017 Imagination Media (https://www.imaginationmedia.com/)
+ * @copyright Copyright (c) 2017 Imagination Media (https://www.NLTecnologia.com/)
  * @license https://opensource.org/licenses/OSL-3.0.php Open Software License 3.0
  */
 
-namespace ImaginationMedia\Correios\Helper;
+namespace NLTecnologia\Correios\Helper;
 
-use ImaginationMedia\Correios\Model\CotacoesFactory;
-use ImaginationMedia\Correios\Model\ResourceModel\Cotacoes as ResourceModel;
+use NLTecnologia\Correios\Model\CotacoesFactory;
+use NLTecnologia\Correios\Model\ResourceModel\Cotacoes as ResourceModel;
 use Magento\Backend\Model\Session\Quote as BackendSessionQuote;
 use Magento\Catalog\Model\ProductRepository;
 use Magento\Framework\App\Config\ScopeConfigInterface;
@@ -102,7 +102,7 @@ class Data extends AbstractHelper
         $this->resourceModel = $resourceModel;
         $this->backendSessionQuote = $backendSessionQuote;
         $this->appState = $appState;
-        $writer = new Stream(BP . '/var/log/imaginationmedia_correios.log');
+        $writer = new Stream(BP . '/var/log/NLTecnologia_correios.log');
         $this->logger = new Logger();
         $this->logger->addWriter($writer);
     }
@@ -148,49 +148,49 @@ class Data extends AbstractHelper
     public function getServiceToPopulate($service, $weight, $finalPostcode)
     {
         $webserviceUrl = (string)$this->scopeConfig->getValue(
-            'carriers/imaginationmedia_correios/webservice_url',
+            'carriers/NLTecnologia_correios/webservice_url',
             $this->storeScope
         );
         if ($webserviceUrl != "") {
             $url = (string)$this->scopeConfig->getValue(
-                'carriers/imaginationmedia_correios/webservice_url',
+                'carriers/NLTecnologia_correios/webservice_url',
                 $this->storeScope
             );
         } else {
             $url = "http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx?StrRetorno=xml";
         }
         $login = (string)$this->scopeConfig->getValue(
-            'carriers/imaginationmedia_correios/login',
+            'carriers/NLTecnologia_correios/login',
             $this->storeScope
         );
         $password = (string)$this->scopeConfig->getValue(
-            'carriers/imaginationmedia_correios/password',
+            'carriers/NLTecnologia_correios/password',
             $this->storeScope
         );
         if ((int)$this->scopeConfig->getValue(
-                'carriers/imaginationmedia_correios/default_height',
+                'carriers/NLTecnologia_correios/default_height',
                 $this->storeScope
             ) > 0) {
             $defHeight = (int)$this->scopeConfig->getValue(
-                'carriers/imaginationmedia_correios/default_height',
+                'carriers/NLTecnologia_correios/default_height',
                 $this->storeScope
             );
         } else {
             $defHeight = 2;
         }
         if ((int)$this->scopeConfig->getValue(
-                'carriers/imaginationmedia_correios/default_width',
+                'carriers/NLTecnologia_correios/default_width',
                 $this->storeScope
             ) > 0) {
             $defWidth = (int)$this->scopeConfig->getValue(
-                'carriers/imaginationmedia_correios/default_width',
+                'carriers/NLTecnologia_correios/default_width',
                 $this->storeScope
             );
         } else {
             $defWidth = 16;
         }
         if ((bool)$this->scopeConfig->getValue(
-                'carriers/imaginationmedia_correios/owner_hands',
+                'carriers/NLTecnologia_correios/owner_hands',
                 $this->storeScope
             ) === false) {
             $ownerHands = 'N';
@@ -198,7 +198,7 @@ class Data extends AbstractHelper
             $ownerHands = 'S';
         }
         if ((bool)$this->scopeConfig->getValue(
-                'carriers/imaginationmedia_correios/received_warning',
+                'carriers/NLTecnologia_correios/received_warning',
                 $this->storeScope
             ) === false) {
             $receivedWarning = 'N';
@@ -207,7 +207,7 @@ class Data extends AbstractHelper
         }
         $origPostcode = (string)$this->scopeConfig->getValue("shipping/origin/postcode", $this->storeScope);
         $declaredValue = (bool)$this->scopeConfig->getValue(
-            'carriers/imaginationmedia_correios/declared_value',
+            'carriers/NLTecnologia_correios/declared_value',
             $this->storeScope
         );
         //Check if the service needs the login and password
@@ -249,31 +249,31 @@ class Data extends AbstractHelper
     public function getOnlineShippingQuotes($urlsArray, $isOffline = false)
     {
         $deliveryMessage = (string)$this->scopeConfig->getValue(
-            "carriers/imaginationmedia_correios/deliverydays_message",
+            "carriers/NLTecnologia_correios/deliverydays_message",
             $this->storeScope
         );
         if ($deliveryMessage === "") {
             $deliveryMessage = "%s - Em média %d dia(s)";
         }
         $showDeliveryDays = (bool)$this->scopeConfig->getValue(
-            "carriers/imaginationmedia_correios/show_deliverydays",
+            "carriers/NLTecnologia_correios/show_deliverydays",
             $this->storeScope
         );
         $addDeliveryDays = (int)$this->scopeConfig->getValue(
-            "carriers/imaginationmedia_correios/add_deliverydays",
+            "carriers/NLTecnologia_correios/add_deliverydays",
             $this->storeScope
         );
         $handlingFee = 0;
         if ($this->scopeConfig->getValue(
-                "carriers/imaginationmedia_correios/handling_fee",
+                "carriers/NLTecnologia_correios/handling_fee",
                 $this->storeScope
             ) != "") {
             if (is_numeric($this->scopeConfig->getValue(
-                "carriers/imaginationmedia_correios/handling_fee",
+                "carriers/NLTecnologia_correios/handling_fee",
                 $this->storeScope
             ))) {
                 $handlingFee = $this->scopeConfig->getValue(
-                    "carriers/imaginationmedia_correios/handling_fee",
+                    "carriers/NLTecnologia_correios/handling_fee",
                     $this->storeScope
                 );
             }
@@ -403,7 +403,7 @@ class Data extends AbstractHelper
     {
         $result = $weight;
         if (((string)$this->scopeConfig->getValue(
-                "carriers/imaginationmedia_correios/weight_type",
+                "carriers/NLTecnologia_correios/weight_type",
                 $this->storeScope
             ) === 'gr')) {
             $result = number_format($weight / 1000, 2, '.', '');
@@ -419,7 +419,7 @@ class Data extends AbstractHelper
     {
         $weight = $this->fixWeight($request->getPackageWeight());
         $maxWeight = (double)($this->scopeConfig->getValue(
-            "carriers/imaginationmedia_correios/max_weight",
+            "carriers/NLTecnologia_correios/max_weight",
             $this->storeScope
         ));
         if ($weight > $maxWeight || $weight <= 0) {
@@ -457,22 +457,22 @@ class Data extends AbstractHelper
         }
 
         $validate = (bool)$this->scopeConfig->getValue(
-            'carriers/imaginationmedia_correios/validate_dimensions',
+            'carriers/NLTecnologia_correios/validate_dimensions',
             $this->storeScope
         );
         foreach ($items as $item) {
             $productItem = $item->getProduct();
             $product = $this->productRepository->getById($productItem->getId());
             $width = ((int)$product->getData('correios_width') === 0) ? (int)$this->scopeConfig->getValue(
-                "carriers/imaginationmedia_correios/default_width",
+                "carriers/NLTecnologia_correios/default_width",
                 $this->storeScope
             ) : (int)$product->getData('correios_width');
             $height = ((int)$product->getData('correios_height') === 0) ? (int)$this->scopeConfig->getValue(
-                "carriers/imaginationmedia_correios/default_height",
+                "carriers/NLTecnologia_correios/default_height",
                 $this->storeScope
             ) : (int)$product->getData('correios_height');
             $depth = ((int)$product->getData('correios_depth') === 0) ? (int)$this->scopeConfig->getValue(
-                "carriers/imaginationmedia_correios/default_depth",
+                "carriers/NLTecnologia_correios/default_depth",
                 $this->storeScope
             ) : (int)$product->getData('correios_depth');
 
@@ -493,7 +493,7 @@ class Data extends AbstractHelper
     public function logMessage($message)
     {
         if ((bool)($this->scopeConfig->getValue(
-            "carriers/imaginationmedia_correios/enabled_log",
+            "carriers/NLTecnologia_correios/enabled_log",
             $this->storeScope
         ))) {
             $this->logger->info($message);
@@ -517,7 +517,7 @@ class Data extends AbstractHelper
             $lastUpdateDatetime = null;
         }
         $daysUpdate = $this->scopeConfig->getValue(
-            "carriers/imaginationmedia_correios/maxdays_update",
+            "carriers/NLTecnologia_correios/maxdays_update",
             $this->storeScope
         );
         if (!is_numeric($daysUpdate)) {
@@ -607,7 +607,7 @@ class Data extends AbstractHelper
     public function truncateCotacoes()
     {
         /**
-         * @var $collection \ImaginationMedia\Correios\Model\ResourceModel\Cotacoes\Collection
+         * @var $collection \NLTecnologia\Correios\Model\ResourceModel\Cotacoes\Collection
          */
         $collection = $this->cotacoesFactory->create()->getCollection();
         foreach ($collection as $item) {

@@ -5,18 +5,18 @@
  *
  * Correios Shipping Method for Magento 2.
  *
- * @package ImaginationMedia\Correios
- * @author Igor Ludgero Miura <igor@imaginationmedia.com>
- * @copyright Copyright (c) 2017 Imagination Media (https://www.imaginationmedia.com/)
+ * @package NLTecnologia\Correios
+ * @author Igor Ludgero Miura <igor@NLTecnologia.com>
+ * @copyright Copyright (c) 2017 Imagination Media (https://www.NLTecnologia.com/)
  * @license https://opensource.org/licenses/OSL-3.0.php Open Software License 3.0
  */
 
-namespace ImaginationMedia\Correios\Model;
+namespace NLTecnologia\Correios\Model;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
-use ImaginationMedia\Correios\Api\CotacoesInterface;
-use ImaginationMedia\Correios\Model\CotacoesFactory;
-use ImaginationMedia\Correios\Helper\Data as CorreiosHelper;
+use NLTecnologia\Correios\Api\CotacoesInterface;
+use NLTecnologia\Correios\Model\CotacoesFactory;
+use NLTecnologia\Correios\Helper\Data as CorreiosHelper;
 
 class CotacoesRepository implements CotacoesInterface
 {
@@ -205,7 +205,7 @@ class CotacoesRepository implements CotacoesInterface
     public function populate()
     {
         $postingMethods = explode(",", $this->scopeConfig->getValue(
-            'carriers/imaginationmedia_correios/posting_methods'
+            'carriers/NLTecnologia_correios/posting_methods'
         ));
         if ($this->cotacoesFactory->create()->getCollection()->count() > 0) {
             $this->helper->logMessage("Can't populate because the db isn't empty. First you to clear the db.");

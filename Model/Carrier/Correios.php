@@ -5,13 +5,13 @@
  *
  * Correios Shipping Method for Magento 2.
  *
- * @package ImaginationMedia\Correios
- * @author Igor Ludgero Miura <igor@imaginationmedia.com>
- * @copyright Copyright (c) 2017 Imagination Media (https://www.imaginationmedia.com/)
+ * @package NLTecnologia\Correios
+ * @author Igor Ludgero Miura <igor@NLTecnologia.com>
+ * @copyright Copyright (c) 2017 Imagination Media (https://www.NLTecnologia.com/)
  * @license https://opensource.org/licenses/OSL-3.0.php Open Software License 3.0
  */
 
-namespace ImaginationMedia\Correios\Model\Carrier;
+namespace NLTecnologia\Correios\Model\Carrier;
 
 use Psr\Log\LoggerInterface;
 use Magento\Store\Model\ScopeInterface;
@@ -28,8 +28,8 @@ use Magento\Shipping\Model\Tracking\Result\Error;
 use Magento\Shipping\Model\Tracking\Result\Status;
 use Magento\Shipping\Model\Tracking\Result;
 use Magento\Shipping\Model\Rate\ResultFactory;
-use ImaginationMedia\Correios\Helper\Data;
-use ImaginationMedia\Correios\Model\CotacoesRepository;
+use NLTecnologia\Correios\Helper\Data;
+use NLTecnologia\Correios\Model\CotacoesRepository;
 
 class Correios extends AbstractCarrier implements CarrierInterface
 {
@@ -164,32 +164,32 @@ class Correios extends AbstractCarrier implements CarrierInterface
 
         //Init Correios Shipping Values
         $this->_enabled = $this->_scopeConfig->getValue(
-            "carriers/imaginationmedia_correios/active",
+            "carriers/NLTecnologia_correios/active",
             $this->_storeScope
         );
         if ($this->_scopeConfig->getValue(
-                'carriers/imaginationmedia_correios/webservice_url',
+                'carriers/NLTecnologia_correios/webservice_url',
                 $this->_storeScope
             ) != "") {
             $this->_url = $this->_scopeConfig->getValue(
-                'carriers/imaginationmedia_correios/webservice_url',
+                'carriers/NLTecnologia_correios/webservice_url',
                 $this->_storeScope
             );
         } else {
             $this->_url = "http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx?StrRetorno=xml";
         }
-        $this->_login = $this->_scopeConfig->getValue('carriers/imaginationmedia_correios/login', $this->_storeScope);
+        $this->_login = $this->_scopeConfig->getValue('carriers/NLTecnologia_correios/login', $this->_storeScope);
         $this->_password = $this->_scopeConfig->getValue(
-            'carriers/imaginationmedia_correios/password',
+            'carriers/NLTecnologia_correios/password',
             $this->_storeScope
         );
 
         if ((int)$this->_scopeConfig->getValue(
-                'carriers/imaginationmedia_correios/default_height',
+                'carriers/NLTecnologia_correios/default_height',
                 $this->_storeScope
             ) > 0) {
             $this->_defHeight = (int)$this->_scopeConfig->getValue(
-                'carriers/imaginationmedia_correios/default_height',
+                'carriers/NLTecnologia_correios/default_height',
                 $this->_storeScope
             );
         } else {
@@ -197,11 +197,11 @@ class Correios extends AbstractCarrier implements CarrierInterface
         }
 
         if ((int)$this->_scopeConfig->getValue(
-                'carriers/imaginationmedia_correios/default_width',
+                'carriers/NLTecnologia_correios/default_width',
                 $this->_storeScope
             ) > 0) {
             $this->_defWidth = (int)$this->_scopeConfig->getValue(
-                'carriers/imaginationmedia_correios/default_width',
+                'carriers/NLTecnologia_correios/default_width',
                 $this->_storeScope
             );
         } else {
@@ -209,33 +209,33 @@ class Correios extends AbstractCarrier implements CarrierInterface
         }
 
         if ((int)$this->_scopeConfig->getValue(
-                'carriers/imaginationmedia_correios/default_depth',
+                'carriers/NLTecnologia_correios/default_depth',
                 $this->_storeScope
             ) > 0) {
             $this->_defDepth = (int)$this->_scopeConfig->getValue(
-                'carriers/imaginationmedia_correios/default_depth',
+                'carriers/NLTecnologia_correios/default_depth',
                 $this->_storeScope
             );
         } else {
             $this->_defDepth = 11;
         }
         $this->_weightType = $this->_scopeConfig->getValue(
-            'carriers/imaginationmedia_correios/weight_type',
+            'carriers/NLTecnologia_correios/weight_type',
             $this->_storeScope
         );
         $this->_postingMethods = explode(",", $this->_scopeConfig->getValue(
-            'carriers/imaginationmedia_correios/posting_methods',
+            'carriers/NLTecnologia_correios/posting_methods',
             $this->_storeScope
         ));
         $this->_deleteCodes = explode(",", "008,-10,16");
-        if ($this->_scopeConfig->getValue('carriers/imaginationmedia_correios/owner_hands', $this->_storeScope) == 0) {
+        if ($this->_scopeConfig->getValue('carriers/NLTecnologia_correios/owner_hands', $this->_storeScope) == 0) {
             $this->_ownerHands = 'N';
         } else {
             $this->_ownerHands = 'S';
         }
 
         if ($this->_scopeConfig->getValue(
-                'carriers/imaginationmedia_correios/received_warning',
+                'carriers/NLTecnologia_correios/received_warning',
                 $this->_storeScope
             ) == 0) {
             $this->_receivedWarning = 'N';
@@ -244,7 +244,7 @@ class Correios extends AbstractCarrier implements CarrierInterface
         }
 
         $this->_freeShippingMessage = $this->_scopeConfig->getValue(
-            "carriers/imaginationmedia_correios/freeshipping_message",
+            "carriers/NLTecnologia_correios/freeshipping_message",
             $this->_storeScope
         );
         $this->_origPostcode = $this->_scopeConfig->getValue(
@@ -252,19 +252,19 @@ class Correios extends AbstractCarrier implements CarrierInterface
             $this->_storeScope
         );
         $this->_declaredValue = $this->_scopeConfig->getValue(
-            'carriers/imaginationmedia_correios/declared_value',
+            'carriers/NLTecnologia_correios/declared_value',
             $this->_storeScope
         );
         $this->_maxWeight = ((double)$this->_scopeConfig->getValue(
-            "carriers/imaginationmedia_correios/max_weight",
+            "carriers/NLTecnologia_correios/max_weight",
             $this->_storeScope
         ));
         $this->_freeMethod = $this->_scopeConfig->getValue(
-            "carriers/imaginationmedia_correios/posting_freemethod",
+            "carriers/NLTecnologia_correios/posting_freemethod",
             $this->_storeScope
         );
         $this->_functionMode = $this->_scopeConfig->getValue(
-            "carriers/imaginationmedia_correios/function_mode",
+            "carriers/NLTecnologia_correios/function_mode",
             $this->_storeScope
         );
         $this->_destinationPostCode = $this->_helper->formatZip($request->getDestPostcode());
@@ -280,15 +280,15 @@ class Correios extends AbstractCarrier implements CarrierInterface
 
         $this->_handlingFee = 0;
         if ($this->_scopeConfig->getValue(
-                "carriers/imaginationmedia_correios/handling_fee",
+                "carriers/NLTecnologia_correios/handling_fee",
                 $this->_storeScope
             ) != "") {
             if (is_numeric($this->_scopeConfig->getValue(
-                "carriers/imaginationmedia_correios/handling_fee",
+                "carriers/NLTecnologia_correios/handling_fee",
                 $this->_storeScope
             ))) {
                 $this->_handlingFee = $this->_scopeConfig->getValue(
-                    "carriers/imaginationmedia_correios/handling_fee",
+                    "carriers/NLTecnologia_correios/handling_fee",
                     $this->_storeScope
                 );
             }
@@ -334,18 +334,18 @@ class Correios extends AbstractCarrier implements CarrierInterface
         if (($this->_functionMode == 2 && count($correiosMethods) != count($this->_postingMethods))
             || $this->_functionMode == 1) {
             $deliveryMessage = $this->_scopeConfig->getValue(
-                "carriers/imaginationmedia_correios/deliverydays_message",
+                "carriers/NLTecnologia_correios/deliverydays_message",
                 $this->_storeScope
             );
             if ($deliveryMessage == "") {
                 $deliveryMessage = "%s - Em média %d dia(s)";
             }
             $showDeliveryDays = $this->_scopeConfig->getValue(
-                "carriers/imaginationmedia_correios/show_deliverydays",
+                "carriers/NLTecnologia_correios/show_deliverydays",
                 $this->_storeScope
             );
             $addDeliveryDays = (int)$this->_scopeConfig->getValue(
-                "carriers/imaginationmedia_correios/add_deliverydays",
+                "carriers/NLTecnologia_correios/add_deliverydays",
                 $this->_storeScope
             );
             foreach ($this->_postingMethods as $method) {
@@ -408,7 +408,7 @@ class Correios extends AbstractCarrier implements CarrierInterface
                 $method = $this->_rateMethodFactory->create();
                 $method->setCarrier('correios');
                 $method->setCarrierTitle($this->_scopeConfig->getValue(
-                    'carriers/imaginationmedia_correios/name',
+                    'carriers/NLTecnologia_correios/name',
                     $this->_storeScope
                 ));
                 $method->setMethod('correios' . $correiosMethod['servico_codigo']);

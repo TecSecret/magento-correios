@@ -5,18 +5,18 @@
  *
  * Correios Shipping Method for Magento 2.
  *
- * @package ImaginationMedia\Correios
- * @author Igor Ludgero Miura <igor@imaginationmedia.com>
- * @copyright Copyright (c) 2017 Imagination Media (https://www.imaginationmedia.com/)
+ * @package NLTecnologia\Correios
+ * @author Dep. de desenvolvimento <webmaster@nltecnologia.com.br>
+ * @copyright Copyright (c) 2017 Imagination Media (https://www.NLTecnologia.com/)
  * @license https://opensource.org/licenses/OSL-3.0.php Open Software License 3.0
  */
 
-namespace ImaginationMedia\Correios\Controller\Adminhtml\Cotacoes;
+namespace NLTecnologia\Correios\Controller\Adminhtml\Cotacoes;
 
 use Magento\Backend\App\Action\Context;
 use Magento\Backend\App\Action;
 use Magento\Framework\Controller\ResultFactory;
-use ImaginationMedia\Correios\Helper\Data as Helper;
+use NLTecnologia\Correios\Helper\Data as Helper;
 
 class ClearDb extends Action
 {
@@ -25,7 +25,7 @@ class ClearDb extends Action
      */
     private $helper;
 
-    const ADMIN_RESOURCE = 'ImaginationMedia_Correios::correios_menuoption1';
+    const ADMIN_RESOURCE = 'NLTecnologia_Correios::correios_menuoption1';
 
     /**
      * ClearDb constructor.

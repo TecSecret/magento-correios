@@ -5,14 +5,14 @@
  *
  * Correios Shipping Method for Magento 2.
  *
- * @package ImaginationMedia\Correios
+ * @package NLTecnologia\Correios
  * @author Douglas Ianitsky <ianitsky@gmail.com>
- * @author Igor Ludgero Miura <igor@imaginationmedia.com>
- * @copyright Copyright (c) 2019 Imagination Media (https://www.imaginationmedia.com/)
+ * @author Dep. de Desenvolvimento <Webmaster@nltecnologia.com.br>
+ * @copyright Copyright (c) 2019 Imagination Media (https://www.NLTecnologia.com/)
  * @license https://opensource.org/licenses/OSL-3.0.php Open Software License 3.0
  */
 
-namespace ImaginationMedia\Correios\Block\Adminhtml\System\Config\Form\Field;
+namespace NLTecnologia\Correios\Block\Adminhtml\System\Config\Form\Field;
 
 use Magento\Config\Block\System\Config\Form\Field\FieldArray\AbstractFieldArray;
 use Magento\Backend\Block\Template\Context;

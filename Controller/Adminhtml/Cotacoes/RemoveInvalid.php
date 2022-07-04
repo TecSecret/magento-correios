@@ -5,15 +5,15 @@
  *
  * Correios Shipping Method for Magento 2.
  *
- * @package ImaginationMedia\Correios
- * @author Igor Ludgero Miura <igor@imaginationmedia.com>
- * @copyright Copyright (c) 2017 Imagination Media (https://www.imaginationmedia.com/)
+ * @package NLTecnologia\Correios
+ * @author Igor Ludgero Miura <igor@NLTecnologia.com>
+ * @copyright Copyright (c) 2017 Imagination Media (https://www.NLTecnologia.com/)
  * @license https://opensource.org/licenses/OSL-3.0.php Open Software License 3.0
  */
 
-namespace ImaginationMedia\Correios\Controller\Adminhtml\Cotacoes;
+namespace NLTecnologia\Correios\Controller\Adminhtml\Cotacoes;
 
-use ImaginationMedia\Correios\Model\CotacoesRepository;
+use NLTecnologia\Correios\Model\CotacoesRepository;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
@@ -25,7 +25,7 @@ class RemoveInvalid extends Action
      */
     protected $cotacao;
 
-    const ADMIN_RESOURCE = 'ImaginationMedia_Correios::correios_menuoption1';
+    const ADMIN_RESOURCE = 'NLTecnologia_Correios::correios_menuoption1';
 
     /**
      * RemoveInvalid constructor.

@@ -5,10 +5,10 @@
  *
  * Correios Shipping Method for Magento 2.
  *
- * @package ImaginationMedia\Correios
- * @author Igor Ludgero Miura <igor@imaginationmedia.com>
+ * @package NLTecnologia\Correios
+ * @author Igor Ludgero Miura <igor@NLTecnologia.com>
  * @author Douglas Ianitsky <ianitsky@gmail.com>
- * @copyright Copyright (c) 2017-2019 Imagination Media (https://www.imaginationmedia.com/)
+ * @copyright Copyright (c) 2017-2019 Imagination Media (https://www.NLTecnologia.com/)
  * @license https://opensource.org/licenses/OSL-3.0.php Open Software License 3.0
  */
 -->
@@ -18,7 +18,7 @@
             <correios>
                 <active>1</active>
                 <sallowspecific>0</sallowspecific>
-                <model>ImaginationMedia\Correios\Model\Carrier\Correios</model>
+                <model>NLTecnologia\Correios\Model\Carrier\Correios</model>
                 <name>Correios</name>
                 <title>Correios</title>
                 <specificerrmsg>Cálculo não disponível, por favor verifique a conexão com o webservices e as dimensões e peso dos produtos.</specificerrmsg>
